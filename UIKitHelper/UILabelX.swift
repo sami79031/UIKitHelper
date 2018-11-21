@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class UILabelX: UILabel {
+public class UILabelX: UILabel {
     
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {

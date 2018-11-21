@@ -8,9 +8,19 @@
 import UIKit
 
 @IBDesignable
-class UIImageViewX: UIImageView {
+public class UIImageViewX: UIImageView {
     
     // MARK: - Properties
+    
+    @IBInspectable public var roundImageView: Bool = false {
+        didSet {
+            if self.roundImageView {
+                self.layer.masksToBounds = false
+                self.layer.cornerRadius = self.frame.height/2
+                self.clipsToBounds = true
+            }
+        }
+    }
     
     @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
@@ -62,7 +72,7 @@ class UIImageViewX: UIImageView {
     }
     
     // MARK: - FUNCTIONS
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         //        super.layoutSubviews()
         //        layer.shadowColor = shadowColor.cgColor
         //        layer.shadowOpacity = Float(shadowOpacity)
@@ -72,7 +82,7 @@ class UIImageViewX: UIImageView {
     }
     
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         if clipsToBounds && shadowOpacity > 0 {
             layer.masksToBounds = true
             layer.cornerRadius = cornerRadius
@@ -91,7 +101,7 @@ class UIImageViewX: UIImageView {
         }
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         if pulseDelay > 0 {
             UIView.animate(withDuration: 1, delay: pulseDelay, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
                 self.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
