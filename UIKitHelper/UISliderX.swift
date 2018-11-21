@@ -12,13 +12,13 @@ import UIKit
 @IBDesignable
 public class UISliderX: UISlider {
     
-    @IBInspectable var thumbImage: UIImage? {
+    @IBInspectable public var thumbImage: UIImage? {
         didSet {
             setupView()
         }
     }
     
-    @IBInspectable var thumbHighlightedImage: UIImage? {
+    @IBInspectable public var thumbHighlightedImage: UIImage? {
         didSet {
             setupView()
         }

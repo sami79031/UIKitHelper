@@ -12,19 +12,19 @@ public class UIViewX: UIView {
     
     // MARK: - Gradient
     
-    @IBInspectable var firstColor: UIColor = UIColor.white {
+    @IBInspectable public var firstColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var secondColor: UIColor = UIColor.white {
+    @IBInspectable public var secondColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var horizontalGradient: Bool = false {
+    @IBInspectable public var horizontalGradient: Bool = false {
         didSet {
             updateView()
         }

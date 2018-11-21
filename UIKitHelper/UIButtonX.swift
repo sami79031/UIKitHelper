@@ -10,20 +10,20 @@ import UIKit
 @IBDesignable
 public class UIButtonX: UIButton {
     
-    enum FromDirection:Int {
+    public enum FromDirection:Int {
         case Top = 0
         case Right = 1
         case Bottom = 2
         case Left = 3
     }
     
-    var shadowView: UIView!
-    var direction: FromDirection = .Left
-    var alphaBefore: CGFloat = 1
+    public var shadowView: UIView!
+    public var direction: FromDirection = .Left
+    public var alphaBefore: CGFloat = 1
     
-    @IBInspectable var animate: Bool = false
-    @IBInspectable var animateDelay: Double = 0.2
-    @IBInspectable var animateFrom: Int {
+    @IBInspectable public var animate: Bool = false
+    @IBInspectable public var animateDelay: Double = 0.2
+    @IBInspectable public var animateFrom: Int {
         get {
             return direction.rawValue
         }
@@ -32,8 +32,8 @@ public class UIButtonX: UIButton {
         }
     }
     
-    @IBInspectable var popIn: Bool = false
-    @IBInspectable var popInDelay: Double = 0.4
+    @IBInspectable public var popIn: Bool = false
+    @IBInspectable public var popInDelay: Double = 0.4
     
     override public func draw(_ rect: CGRect) {
         self.clipsToBounds = true
@@ -91,20 +91,20 @@ public class UIButtonX: UIButton {
     
     // MARK: - Borders
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable public var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.clear {
+    @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
@@ -119,19 +119,19 @@ public class UIButtonX: UIButton {
     
     
     //    MARK: - Gradient
-    @IBInspectable var firstColor: UIColor = UIColor.white {
+    @IBInspectable public var firstColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var secondColor: UIColor = UIColor.white {
+    @IBInspectable public var secondColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var horizontalGradient: Bool = false {
+    @IBInspectable public var horizontalGradient: Bool = false {
         didSet {
             updateView()
         }

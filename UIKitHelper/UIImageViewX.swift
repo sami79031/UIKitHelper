@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-public class UIImageViewX: UIImageView {
+public  class UIImageViewX: UIImageView {
     
     // MARK: - Properties
     
@@ -40,10 +40,10 @@ public class UIImageViewX: UIImageView {
         }
     }
     
-    @IBInspectable var pulseDelay: Double = 0.0
+    @IBInspectable public var pulseDelay: Double = 0.0
     
-    @IBInspectable var popIn: Bool = false
-    @IBInspectable var popInDelay: Double = 0.4
+    @IBInspectable public var popIn: Bool = false
+    @IBInspectable public var popInDelay: Double = 0.4
     
     // MARK: - Shadow
     
