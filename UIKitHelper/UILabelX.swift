@@ -12,6 +12,34 @@ import UIKit
 @IBDesignable
 public class UILabelX: UILabel {
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        dynamicFontSize()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        dynamicFontSize()
+    }
+    
+    func dynamicFontSize() {
+        let font = self.font
+        self.font = getScaledFont(for: font)
+        self.adjustsFontForContentSizeCategory = true
+    }   
+    
+    func getScaledFont(for font: UIFont?) -> UIFont {
+        
+        guard let customFont = font else {
+            return UIFont.systemFont(ofSize: 17)
+        }
+        if #available(iOS 11.0, *) {
+            return UIFontMetrics.default.scaledFont(for: customFont)
+        } else {
+            return customFont.withSize(customFont.pointSize)
+        }
+    }
+    
     @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
